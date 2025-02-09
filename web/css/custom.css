@@ -1,0 +1,83 @@
+/* Specific Styling for Signup Page */
+/* GLOBAL STYLING */
+
+/* Validation error message styling */
+.help-block {
+    font-size: 12px; /* Reduced font size for error messages */
+    margin-top: 8px; /* Add spacing above/below */
+    color: red; /* Red color for error messages */
+}
+
+/* Form validation error styling */
+.has-error .form-control {
+    border-color: red; /* Red border for inputs with validation errors */
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Optional shadow effect */
+    color: inherit !important;/* Prevents input text color from turning red */
+}
+
+/* Button styling (used globally) */
+.btn-mine-1 {
+    background-color: #1a2035 !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-mine-1:hover {
+    background-color: #13172b !important;
+}
+
+/* Responsive Styling */
+@media (max-width: 576px) {
+    .btn-mine-1 {
+        font-size: 14px;
+    }
+}
+
+/* Background styling */
+.signup-container,.login-container {
+    background-color: #f5f7fd;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card styling */
+.signup-card, .login-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Header styling */
+.signup-card h2 {
+    text-align: center;
+    color: #1a2035;
+    margin-bottom: 20px;
+}
+
+/* Link styling */
+.signup-links p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.signup-links a {
+    color: #1a2035;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup-links a:hover {
+    text-decoration: underline;
+}
