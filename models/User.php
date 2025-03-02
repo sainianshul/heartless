@@ -17,10 +17,10 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
 
     //  user status
     const STATUS_DELETED = 0;
-    const STATUS_INACTIVE = 1;
-    const STATUS_ACTIVE = 2;
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
 
-    public static function getStatusList()
+    public static function getStatusOptions()
     {
         return [
             self::STATUS_DELETED => 'Deleted',
@@ -31,14 +31,14 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
 
     public function getStatusName()
     {
-        return self::getStatusList()[$this->status] ?? 'Unknown';
+        return self::getStatusOptions()[$this->status] ?? 'Unknown';
     }
 
     // user role
     const ROLE_USER = 10;
     const ROLE_ADMIN = 20;
 
-    public static function getRoleList()
+    public static function getRoleOptions()
     {
         return [
             self::ROLE_USER => 'User',
@@ -48,7 +48,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
 
     public function getRoleName()
     {
-        return self::getRoleList()[$this->role] ?? 'Unknown';
+        return self::getRoleOptions()[$this->role] ?? 'Unknown';
     }
 
     const Email_VERIFIED = 1;
@@ -179,7 +179,7 @@ class User extends ActiveRecord implements \yii\web\IdentityInterface
     }
     public function signup()
     {
-        $this->password = Yii::$app->security->generatePasswordHash($this->password);
+        $this->password = $this->password;
         $this->status_id = self::STATUS_ACTIVE;
         $this->role_id = self::ROLE_USER;
         $this->is_email_verified = self::Email_NOT_VERIFIED;

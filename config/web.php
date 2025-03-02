@@ -53,6 +53,11 @@ $config = [
         ],
         
     ],
+    'modules' => [
+        'notes' => [
+            'class' => 'app\modules\notes\Module', 
+        ],
+    ],
     'params' => $params,
 ];
 
